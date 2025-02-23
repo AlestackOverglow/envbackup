@@ -2,6 +2,8 @@
 
 A modern WPF application for backing up and restoring Windows environment variables with a dark-themed Material Design interface.
 
+If you find this project helpful, please consider giving it a star ⭐ It helps others discover the project and motivates further development.
+
 ![License](https://img.shields.io/github/license/AlestackOverglow/envbackup)
 ![.NET Version](https://img.shields.io/badge/.NET-8.0-purple)
 
