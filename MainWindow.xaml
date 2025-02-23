@@ -1,0 +1,88 @@
+<Window x:Class="EnvBackup.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Environment Variables Backup" Height="600" Width="800"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Dark" PrimaryColor="DeepPurple" SecondaryColor="Lime" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,16">
+            <TextBlock Text="Environment Variables Backup Manager" 
+                       Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                       Margin="0,0,0,16"/>
+            
+            <WrapPanel>
+                <Button x:Name="CreateBackupButton"
+                        Content="Create Backup"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Margin="0,0,8,0"
+                        Click="CreateBackupButton_Click"/>
+                
+                <Button x:Name="RestoreBackupButton"
+                        Content="Restore Backup"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Margin="0,0,8,0"
+                        Click="RestoreBackupButton_Click"/>
+                
+                <Button x:Name="ViewBackupButton"
+                        Content="View Backup"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Margin="0,0,8,0"
+                        Click="ViewBackupButton_Click"/>
+                
+                <Button x:Name="DeleteBackupButton"
+                        Content="Delete Backup"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Margin="0,0,8,0"
+                        Click="DeleteBackupButton_Click"/>
+                
+                <Button x:Name="DeleteAllBackupsButton"
+                        Content="Delete All Backups"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Click="DeleteAllBackupsButton_Click"/>
+            </WrapPanel>
+        </StackPanel>
+
+        <ListView x:Name="BackupListView" 
+                  Grid.Row="1"
+                  Margin="0,0,0,16"
+                  Style="{StaticResource MaterialDesignListView}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Backup Date" DisplayMemberBinding="{Binding Date}"/>
+                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right">
+            <TextBlock>
+                <Hyperlink NavigateUri="https://alestackoverglow.github.io/"
+                           RequestNavigate="Hyperlink_RequestNavigate">
+                    Created by AlestackOverglow
+                </Hyperlink>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Window> 
