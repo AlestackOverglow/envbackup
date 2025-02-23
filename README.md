@@ -51,10 +51,6 @@ dotnet run
    - Delete it
 4. Use "Delete All Backups" to clear the backup history
 
-## Screenshots
-
-[Add screenshots here]
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
