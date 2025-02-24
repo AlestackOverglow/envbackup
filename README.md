@@ -36,12 +36,16 @@ git clone https://github.com/AlestackOverglow/envbackup.git
 # Navigate to project directory
 cd envbackup
 
-# Build the project
+# Debug build
 dotnet build
 
-# Run the application
-dotnet run
+# Release build with single executable
+dotnet publish -c Release
 ```
+Find the output in:
+   - Debug: `bin\Debug\net8.0-windows`
+   - Release: `bin\Release\net8.0-windows\win-x64\publish`
+
 
 ## Usage
 
